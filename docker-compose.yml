@@ -1,6 +1,8 @@
 
 version: '3.6'
 
+# Template Version 0.1
+
 services:
 
   wordpress:
