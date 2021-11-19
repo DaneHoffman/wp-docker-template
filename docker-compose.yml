@@ -50,18 +50,6 @@ services:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
-  wordmove:
-      tty: true
-      depends_on:
-          - wordpress
-      image: welaika/wordmove
-      restart: on-failure:5
-      container_name: ${COMPOSE_PROJECT_NAME}_wordmove  # (+)
-      volumes:
-          - ./wordmove/config:/home
-          - ./html:/var/www/html
-          - ~/.ssh:/root/.ssh      # (!)
-
   wpcli:
     build: ./wpcli/
     image: wpcli:latest
